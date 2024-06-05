@@ -1,7 +1,7 @@
-##
 ## I simply set the input x as a matrix
-## and then set the solved value "s" as a null
-## then I changed every reference to "mean" to "solve"
+## and then set the solved value "s" as null.
+## Next, I changed every reference to "mean" to "solve"
+## Note: Matrix is created using sample function for variability
 makeCacheMatrix <- function(x = matrix(sample(1:100,9),3,3)) {
   s <- NULL
   set <- function(y) {
@@ -15,8 +15,9 @@ makeCacheMatrix <- function(x = matrix(sample(1:100,9),3,3)) {
        setsolve = setsolve,
        getsolve = getsolve)
 }
-##
+
 ## Same here, changed "mean" to "solve" and "m" to "s"
+## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above
 cacheSolve <- function(x, ...) {
   s <- x$getsolve()
   if(!is.null(s)) {
